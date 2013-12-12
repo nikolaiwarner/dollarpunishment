@@ -1,0 +1,10 @@
+{
+  "packages": {
+    "moment": {},
+    "iron-router": {},
+    "collection2": {},
+    "bootstrap-3": {},
+    "autoform": {},
+    "houston": {}
+  }
+}
