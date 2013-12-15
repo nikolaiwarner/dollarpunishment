@@ -1,11 +1,18 @@
 <template name="punishments_index">
-  <ul>
+  <ul class="punishment_list">
   {{#each punishments}}
     <li>
       <a href="{{pathFor 'punishments_show'}}">
-        {{name}} = ${{dollars}}
+        <span class="name">{{name}}</span>
+        <span class="dollars">${{dollars}}</span>
       </a>
     </li>
   {{/each}}
-  <ul>
+    <li>
+      <a href="{{pathFor 'punishments/new'}}" class="new">
+        <span class="name"><i class="fa fa-dashboard"></i>+</span>
+        <span class="dollars">New Punishment</span>
+      </a>
+    </li>
+  </ul>
 </template>

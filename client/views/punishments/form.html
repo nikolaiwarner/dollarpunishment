@@ -1,34 +1,39 @@
 <template name="punishment_form">
   <div class="row">
-    <div class="col-md-6">
-      {{#autoForm schema=schema doc=selectedDoc novalidate="novalidate"}}
+    <div class="col-md-3">
+      {{#autoForm schema=schema doc=selectedPunishment novalidate="novalidate"}}
         {{afFieldInput 'userId' type="hidden" value=userId}}
-        <fieldset>
-          <legend>Let's Avoid This</legend>
-          <div class="form-group{{#if afFieldIsInvalid 'name'}} has-error{{/if}}">
-            {{afFieldLabel 'name'}}
-            {{afFieldInput 'name'}}
-            {{#if afFieldIsInvalid 'name'}}
+        <div class="form-group{{#if afFieldIsInvalid 'name'}} has-error{{/if}}">
+          <label class="control-label">I want to avoid</label>
+          {{afFieldInput 'name' placeholder=randomNamePlaceholder class="form-control"}}
+          {{#if afFieldIsInvalid 'name'}}
             <span class="help-block">{{afFieldMessage 'name'}}</span>
-            {{/if}}
+          {{/if}}
+        </div>
+        <div class="form-group{{#if afFieldIsInvalid 'dollars'}} has-error{{/if}}">
+          <label class="control-label">Starting punishment amount</label>
+          <div class="input-group">
+            <span class="input-group-addon">$</span>
+            {{afFieldInput 'dollars' placeholder="1" class="form-control"}}
           </div>
-          <div class="form-group{{#if afFieldIsInvalid 'description'}} has-error{{/if}}">
-            {{afFieldLabel 'description'}}
-            {{afFieldInput 'description'}}
-            {{#if afFieldIsInvalid 'description'}}
-            <span class="help-block">{{afFieldMessage 'description'}}</span>
-            {{/if}}
-          </div>
-          <div class="form-group{{#if afFieldIsInvalid 'dollars'}} has-error{{/if}}">
-            {{afFieldLabel 'dollars'}}
-            {{afFieldInput 'dollars'}}
-            {{#if afFieldIsInvalid 'dollars'}}
+          {{#if afFieldIsInvalid 'dollars'}}
             <span class="help-block">{{afFieldMessage 'dollars'}}</span>
-            {{/if}}
-          </div>
+          {{/if}}
+        </div>
+        {{#if newPunishment}}
           <button type="submit" class="btn btn-primary insert">Save</button>
-        </fieldset>
+        {{else}}
+          <button type="submit" class="btn btn-primary update">Update</button>
+        {{/if}}
       {{/autoForm}}
+
+      <hr>
+
+      {{#unless newPunishment}}
+        {{#autoForm schema=schema doc=selectedPunishment}}
+          <button type="submit" class="btn btn-danger remove">Delete</button>
+        {{/autoForm}}
+      {{/unless}}
     </div>
   </div>
 </template>

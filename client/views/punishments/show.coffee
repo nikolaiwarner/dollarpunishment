@@ -5,4 +5,4 @@ Template.punishments_show.events
 
 Template.punishments_show.helpers
   punishment: ->
-    Punishments.findOne Session.get("selectedDoc")
+    Punishments.findOne Session.get("selectedPunishment")

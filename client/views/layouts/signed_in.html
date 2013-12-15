@@ -1,14 +1,6 @@
 <template name="signed_in">
   <div class="container">
-    {{#if currentUser}}
-      <a href="{{pathFor 'punishments/index'}}">Punishments</a>
-      <a href="{{pathFor 'punishments/new'}}" class="btn btn-primary">New</a>
-    {{/if}}
-    <hr>
-
+    {{> navbar}}
     {{yield}}
-
-    <hr>
-    {{loginButtons}}
   </div>
 </template>
