@@ -1,17 +1,15 @@
 <template name="navbar">
   <div class="navbar" role="navigation">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="{{pathFor 'punishments/index'}}">Dollar Punishment</a>
-    </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         {{#if currentUser}}
-        <li><a href="{{pathFor 'punishments/index'}}">Your Problems</a></li>
+          <li><a href="{{pathFor 'punishments/index'}}">Your Problems</a></li>
         {{/if}}
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/nikolaiwarner/dollarpunishment">About</a></li>
         {{#if currentUser}}
-        <li><a href="/sign_out">Sign Out</a></li>
+          <li><a href="/sign_out">Sign Out</a></li>
         {{/if}}
       </ul>
     </div>
