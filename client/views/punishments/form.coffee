@@ -6,9 +6,8 @@ punishmentsForm.hooks
       unless error
         Router.go("/punishments/#{result}")
     update: (error, template) ->
-      console.log template
       unless error
-        Router.go("/punishments/#{result}")
+        Router.go("/punishments/#{template.data._doc._id}")
     remove: (error, template) ->
       unless error
         Router.go("/punishments/")

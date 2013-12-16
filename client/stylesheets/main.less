@@ -2,7 +2,35 @@ body {
   background-color: #eee;
 }
 
+.navbar {
+  border-radius: 0;
+  border-bottom: 1px solid #bbb;
+
+  a {
+    color: #666;
+  }
+  .navbar-brand {
+    color: #333;
+  }
+}
+
+h1 {
+  text-align: center;
+  padding-bottom: 30px;
+
+  small {
+    display: block;
+    font-size: 12px;
+  }
+}
+
+hr {
+  border-top: 1px solid #bbb;
+}
+
 ul.punishment_list {
+  text-align: center;
+
   li {
     list-style: none;
     display: inline;
@@ -33,9 +61,51 @@ ul.punishment_list {
         color: #aaa;
       }
 
-      &.new {
-        background-color: #ddd;
+      &:hover {
+        border-color: #999;
       }
+
+      &.new {
+        opacity: 0.5;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.punishment {
+  text-align: center;
+
+  .btn.btn-punish {
+    position: relative;
+    transition: all 0.5s;
+    border-radius: 100px;
+    width: 120px;
+    height: 115px;
+    background-color: red;
+    box-shadow: 0 3px 0 darken(red, 10%), 0 5px 0 #fff;
+    color: #fff;
+    text-shadow: -1px -1px darken(red, 10%);
+    font-size: 25px;
+
+    &:hover {
+      transition: all 0.5s;
+      top: -4px;
+      box-shadow: 0 7px 0 darken(red, 10%), 0 10px 2px #999;
+    }
+
+    &:active {
+      transition: all 0s;
+      top: 0;
+      box-shadow: inset 0 6px 4px darken(red, 10%), 0 3px 0 darken(red, 10%), 0 2px 0 3px #fff;
+    }
+
+    &:focus {
+      outline-color: transparent;
+      outline-style: none;
     }
   }
 }

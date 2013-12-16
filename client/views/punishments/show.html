@@ -1,16 +1,19 @@
 <template name="punishments_show">
-  {{#with punishment}}
-    <h1>{{name}}</h1>
-    <p>{{description}}</p>
-    <p>
-      ${{dollars}}
-    </p>
-    <button class="btn btn-primary punish">
-      Punish
-    </button>
-
-    <a href="/punishments/{{_id}}/edit">
-      Edit
-    </a>
-  {{/with}}
+  <div class="punishment">
+    {{#with punishment}}
+      <h1>{{name}}</h1>
+      <p>{{description}}</p>
+      <p>
+        ${{dollars}}
+      </p>
+      <p>
+        <button class="btn btn-punish punish">Punish</button>
+      </p>
+      <p>
+        <a href="/punishments/{{_id}}/edit" class="btn btn-default btn-sm">
+          Edit
+        </a>
+      </p>
+    {{/with}}
+  </div>
 </template>
