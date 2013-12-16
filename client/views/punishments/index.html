@@ -1,25 +1,26 @@
 <template name="punishments_index">
-
-  <h1>
-    <small>
-      Your soon to be gone
-    </small>
-    Problems
-  </h1>
+  <div class="title_container">
+    <h1>
+      <small>
+        Your soon to be gone
+      </small>
+      Problems
+    </h1>
+  </div>
 
   <ul class="punishment_list">
   {{#each punishments}}
-    <li>
+    <li class="punishment_item">
       <a href="{{pathFor 'punishments_show'}}">
         <span class="name">{{name}}</span>
         <span class="dollars">${{dollars}}</span>
       </a>
     </li>
   {{/each}}
-    <li>
-      <a href="{{pathFor 'punishments/new'}}" class="new">
-        <span class="name">Mo Problems</span>
-        <span class="dollars">Mo Money</span>
+    <li class="punishment_item">
+      <a href="{{pathFor 'punishments/new'}}" class="new" title="Add a new problem and punishment">
+        <span class="name">+</span>
+        <span class="dollars">Mo Problems. Mo Money.</span>
       </a>
     </li>
   </ul>

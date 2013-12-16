@@ -4,7 +4,7 @@ body {
 
 .navbar {
   border-radius: 0;
-  border-bottom: 1px solid #bbb;
+  margin-bottom: 50px;
 
   a {
     color: #666;
@@ -14,7 +14,14 @@ body {
   }
 }
 
+.title_container {
+  text-align: center;
+}
+
 h1 {
+  padding-top: 0;
+  margin-top: 0;
+  display: inline-block;
   text-align: center;
   padding-bottom: 30px;
 
@@ -36,12 +43,14 @@ ul.punishment_list {
     display: inline;
 
     a {
+      transition: all 0.5s;
       display: inline-block;
       border: 1px solid #bbb;
       border-bottom-width: 2px;
       border-radius: 2px;
       background-color: #fff;
       padding: 20px;
+      margin: 5px;
       text-align: center;
       text-decoration: none;
       cursor: pointer;
@@ -67,6 +76,9 @@ ul.punishment_list {
 
       &.new {
         opacity: 0.5;
+        .name {
+          font-size: 35px;
+        }
 
         &:hover {
           opacity: 1;
@@ -78,34 +90,35 @@ ul.punishment_list {
 
 .punishment {
   text-align: center;
+}
 
-  .btn.btn-punish {
-    position: relative;
+.btn.btn-punish {
+  position: relative;
+  transition: all 0.5s;
+  border-radius: 100px;
+  width: 120px;
+  height: 115px;
+  background-color: red;
+  box-shadow: 0 3px 0 darken(red, 10%), 0 5px 0 #fff;
+  color: #fff;
+  text-shadow: -1px -1px darken(red, 10%);
+  font-size: 25px;
+
+  &:hover {
     transition: all 0.5s;
-    border-radius: 100px;
-    width: 120px;
-    height: 115px;
-    background-color: red;
-    box-shadow: 0 3px 0 darken(red, 10%), 0 5px 0 #fff;
-    color: #fff;
-    text-shadow: -1px -1px darken(red, 10%);
-    font-size: 25px;
+    top: -4px;
+    box-shadow: 0 7px 0 darken(red, 10%), 0 10px 2px #999;
+  }
 
-    &:hover {
-      transition: all 0.5s;
-      top: -4px;
-      box-shadow: 0 7px 0 darken(red, 10%), 0 10px 2px #999;
-    }
+  &:active {
+    transition: all 0s;
+    top: 0;
+    box-shadow: inset 0 6px 4px darken(red, 10%), 0 3px 0 darken(red, 10%), 0 2px 0 3px #fff;
+  }
 
-    &:active {
-      transition: all 0s;
-      top: 0;
-      box-shadow: inset 0 6px 4px darken(red, 10%), 0 3px 0 darken(red, 10%), 0 2px 0 3px #fff;
-    }
-
-    &:focus {
-      outline-color: transparent;
-      outline-style: none;
-    }
+  &:focus {
+    outline-color: transparent;
+    outline-style: none;
   }
 }
+

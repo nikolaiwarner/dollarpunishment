@@ -1,6 +1,6 @@
 <template name="punishment_form">
   <div class="row">
-    <div class="col-md-4 col-md-offset-4">
+    <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-2">
       {{#autoForm schema=schema doc=selectedPunishment novalidate="novalidate"}}
         {{afFieldInput 'userId' type="hidden" value=userId}}
         <div class="form-group{{#if afFieldIsInvalid 'name'}} has-error{{/if}}">
