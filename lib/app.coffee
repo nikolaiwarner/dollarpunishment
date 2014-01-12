@@ -17,6 +17,10 @@
       type: Number,
       label: "Dollars",
       min: 0
+    increment:
+      type: Number,
+      label: "Increment",
+      min: 0
 
 @Punishments.allow
   insert: (userId, doc) ->
