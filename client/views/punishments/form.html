@@ -14,14 +14,24 @@
           <label class="control-label">Starting punishment amount</label>
           <div class="input-group">
             <span class="input-group-addon">$</span>
-            {{afFieldInput 'dollars' placeholder="1" class="form-control"}}
+            {{afFieldInput 'dollars' placeholder="1" value="1" class="form-control"}}
+          </div>
+          {{#if afFieldIsInvalid 'dollars'}}
+            <span class="help-block">{{afFieldMessage 'dollars'}}</span>
+          {{/if}}
+        </div>
+        <div class="form-group{{#if afFieldIsInvalid 'increment'}} has-error{{/if}}">
+          <label class="control-label">Increment punishment on each offence by</label>
+          <div class="input-group">
+            <span class="input-group-addon">$</span>
+            {{afFieldInput 'increment' value="1" class="form-control"}}
           </div>
           {{#if afFieldIsInvalid 'dollars'}}
             <span class="help-block">{{afFieldMessage 'dollars'}}</span>
           {{/if}}
         </div>
         <div class="form-group{{#if afFieldIsInvalid 'description'}} has-error{{/if}}">
-          <label class="control-label">Words of inspiration</label>
+          <label class="control-label">Optional words of inspiration</label>
           {{afFieldInput 'description' rows=5 placeholder="You can do it!"}}
           {{#if afFieldIsInvalid 'description'}}
             <span class="help-block">{{afFieldMessage 'description'}}</span>

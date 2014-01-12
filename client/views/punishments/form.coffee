@@ -5,10 +5,10 @@ punishmentsForm.hooks
     insert: (error, result, template) ->
       unless error
         Router.go("/punishments/#{result}")
-    update: (error, template) ->
+    update: (error, result, template) ->
       unless error
         Router.go("/punishments/#{template.data._doc._id}")
-    remove: (error, template) ->
+    remove: (error, result, template) ->
       unless error
         Router.go("/punishments/")
 
