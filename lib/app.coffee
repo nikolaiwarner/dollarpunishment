@@ -21,6 +21,9 @@
       type: Number,
       label: "Increment",
       min: 0
+    occurrences:
+      type: [Date],
+      optional: true
 
 @Punishments.allow
   insert: (userId, doc) ->

@@ -1,5 +1,6 @@
 Template.punishments_show.events
   "click .punish": (event) ->
+    Punishments.update @_id, {$push: {occurrences: new Date}}
     if @increment == undefined
       @increment = 1
     if @increment > 0
@@ -11,3 +12,5 @@ Template.punishments_show.events
 Template.punishments_show.helpers
   punishment: ->
     Punishments.findOne Session.get("selectedPunishment")
+  format_date: (date) ->
+    moment(date).format('LLL')

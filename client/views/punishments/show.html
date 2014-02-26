@@ -22,6 +22,15 @@
       <p>
         <button class="btn btn-punish punish">Punish</button>
       </p>
+      {{#if occurrences}}
+        <ul class="list-group">
+          {{#each occurrences}}
+            <li class="list-group-item">
+              {{format_date this}}
+            </li>
+          {{/each}}
+        </ul>
+      {{/if}}
     {{/with}}
   </div>
 </template>
